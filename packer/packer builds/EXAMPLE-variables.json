@@ -1,0 +1,12 @@
+{
+    "vsphere-server": "vcenter.contos.com",
+      "vsphere-user": "Administrator@vsphere.local",
+      "vsphere-password": "Vsphere_Admin_Password",
+      "vsphere-datacenter": "Data_Center_Name",
+      "vsphere-cluster": "Cluster_Name",
+      "vsphere-network": "Virtual_Network",
+      "vsphere-datastore": "Template_Datastore_Location",
+      "vsphere-folder": "VM_Folder_Name",
+      "insecure-connection": "true",
+      "vm-notes": "Packer template. Build time:{{isotime}}"
+}
