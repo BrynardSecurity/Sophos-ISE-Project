@@ -1,5 +1,5 @@
 {
-    "vsphere-server": "vcenter.contos.com",
+    "vsphere-server": "vcenter.contoso.com",
       "vsphere-user": "Administrator@vsphere.local",
       "vsphere-password": "Vsphere_Admin_Password",
       "vsphere-datacenter": "Data_Center_Name",

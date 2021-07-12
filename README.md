@@ -67,6 +67,11 @@ The base image builds are accomplished with <a href="https://www.packer.io/">Has
 <p align="left">
 For this project I have built some base-line packer build templates for Windows 10, Windows Server 2016, and Windows Server 2019. These builds are configured for deployment in a VMWare vSphere environment, however, adding builders for Hyper-V, VirtualBox, VMWare Workstation, Azure, AWS, and GCP is planned.
 </p>
+<p align="left">
+Read more about the packer build files and use-cases here:
+
+<a href="packer/PACKER.md">Packer Build Templates.</a>
+</p>
 
 <h2 align="left">Infrastructure as Code Tools</h2>
 <p align="left">
