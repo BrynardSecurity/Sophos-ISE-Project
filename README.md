@@ -18,18 +18,9 @@
 <details open="open">
     <summary>Table of Contents</summary>
         <ol>
-            <li><a href="#about-the-project">About The Project</a>
-                <ul>
-                <li><a href="#tooling">Tooling
-                </ul>
-            <li><a href="#getting-started">Getting Started</a>
-            <li><a href="#usage">Usage</a>
-            <li><a href="#roadmap">Roadmap</a>
-            <li><a href="#contributing">Contributing</a>
-            <li><a href="#license">License</a>
-            <li><a href="#contact">Contact</a>
-            <li><a href="#acknowledgements">Acknowledgements</a>
-            </li>
+            <li><a href="#about-the-project">About The Project</a>                
+            <li><a href="#proof-of-concept">Proof of concept</a> 
+            <li><a href="#Demo-AWS">Demo</a>
         </ol>
 </details>
 
@@ -38,57 +29,53 @@
 
 This project was initiated by Jeramy Kopacko, with the help of Christopher Glick and Ralph Brynard, with the intent to create a <strong>Sophos Sales Experience</strong>, whereby Sophos customers can deploy an ephemeral development environment to actively test competing solutions with Sophos Central Intercept X Advanced. 
 
-With this goal in mind, some of the core concepts underlying the architecture of this project include:
+The goal of the project is two-fold:
 
 <ul>
-    <li><strong> Base images that are built reliably, and repeatably.</strong>
-    <li><strong> Infrastructure as code tooling that accomodates a variety of on-prem virtualization platforms as well as Public Cloud Infrastructure deployments.</strong>
-    <li><strong> Configuration management tools to ensure consistent configuration across environments.</strong>
-    <li><strong> Simulated attack scenarios and open-source tools to simulate various cyber-security attacks.</strong>
+    <li> To utilize IaC and DevOps concepts and technologies to build ephemeral environments for generating threat case data to equip the Sales Engineering teams to effectively and efficiently demonstrate Sophos solutions with real-world automated simulations. 
+    <li> To perform head-to-head real-world tests with independent third-party attack emulation tools (Atomic Red Team, MITRE Caldera, etc...) to collect real-world competitive intelligence data. The secondary goal may also include providing a platform for customers to run head-to-head tests against Sophos and other third-party vendors to compare the performance of competitive solutions with Sophos solutions.
 </ul>
 
-As a result, a secondary function of this project is to utilize the repeatability and consistincy of the project to allow Sophos Inside Sales Engineers, Mid-Market, and Enterprise Sales Engineers to generate consistent data for threat case analysis, XDR queries, etc...
+## Proof of Concept
 
-
-## Tooling
-
-The project architecture can be broken into several phases:
-<ul>
-    <li><strong>Build Tools</strong>
-    <li><strong>Infrastructure as Code Tools</strong>
-    <li><strong>Provisioning Tools</strong>
-    <li><strong>Execution Tools</strong>
-</ul>
-
-<h2 align="left">Build Tools</h2>
-<p align="left">
-The base image builds are accomplished with <a href="https://www.packer.io/">Hashicorp's Packer</a> utility to build the image templates. Packer was selected primarily because of it's integrations and compatibility with VMWare, Hyper-V, Azure, AWS, GCP, Docker, Kubernetes, etc... These integrations make packer an ideal toolset to ensure consistent configuration across multiple platforms and environments. 
+<p>
+Splunk has developed the open-source project, <a href="https://github.com/splunk/attack_range">Attack Range</a>, as a "detection development platform." This project addresses three main challenges in detection engineering:
+<ol>
+    <li> Quickly and consistently build a small ephemeral lab environment that is as close as possible to a production environment.
+    <li> The attack range performs attack simulation using different engines, including Atmoc Red Team and Caldera, as well as an ad-hoc Kali Linux machine for additional testing.
+    <li> The project integrates seamlessly into an CI/CD pipeline to automate detection rule testing, or alternatively, generation of detection data for threat case creation.
+</ol>
+<p>
+The tool utilizes terraform, and ansible to provision the environment, and natively supports AWS and Azure. A local version of the project utilizes Vagrant and VirtualBox for local environment automation.
 </p>
-<p align="left">
-For this project I have built some base-line packer build templates for Windows 10, Windows Server 2016, and Windows Server 2019. These builds are configured for deployment in a VMWare vSphere environment, however, adding builders for Hyper-V, VirtualBox, VMWare Workstation, Azure, AWS, and GCP is planned.
-</p>
-<p align="left">
-Read more about the packer build files and use-cases here:
-
-<a href="packer/PACKER.md">Packer Build Templates.</a>
+<p>
+The Sophos project would ultimately retain the same functionality as the Splunk attack_range projects. However, support for Public Cloud and local attack range builds should be available from the same project. For local builds, support for VMWare Workstation, VirtualBox, VSphere, and Hyper-V should be available with Terraform still serving at the provisioner for those platforms as well. However, Vagrant support may be preferrable as we can build pre-defined vagrant boxes which could be utilized as well. To-that-end, implementing packer for custom image/template builds which can be utilized by Terraform as well would also be ideal.
 </p>
 
-<h2 align="left">Infrastructure as Code Tools</h2>
-<p align="left">
-The infrastructure as Code Tooling used for this project is <a href="https://www.terraform.io/">Hashicorp Terraform</a>. Terraform is used as it also has integrations with on-prem hypervisor environments (VMWare, Hyper-V, etc...) as well as Public Cloud Environments. This makes it an ideal toolset for deploying the ephemeral demo environments on multiple platforms, thus making it very scalable.
-</p>
-<p align="left">
-Terraform plans, the infrastructure build plans, can also be executed via Ansible, and also supports dynamic infrastructure chaining. 
-</p>
+## Demo - AWS 
 
-<h2 align="left">Provisioning Tools</h2>
-<p align="left">
-The provisioning tools utilized in the project is <a href="https://www.ansible.com/"> Ansible</a>, and provides a robust solution for provisioning the environment once it's been deployed via Terraform. Ansible will provision the Windows VM's into an ephemeral domain environment, as well as completing the rest of the provisioning for the single-node Kubernetes cluster that will provide the basis for the Caldera/C2 server and configuring the Caldera agents to run our simulated attacks.
+<h3 align="left">Configuring and Building</h2>
+<p>
+First configure the environment to execute the simulated attack data.
+<p>
+<img src="images/attack_range_configure.gif">
 </p>
-
-<h2 align="left">Execution Tools</h2>
-<p align="left">
-The execution tools haven't been fully defined at this stage. However, MITRE Caldera is a suitable candidate for the C2 server emulation to execute our simulated attacks. 
+<p>
+With the configuration set, we can now build the environment. The Splunk project is limited to Windows Server AMI's in AWS at the moment, however, it is possible to upload a custom Windows 10 AMI and utilize this image in the AWS build environment. 
 </p>
-
-## Getting Started
+<p>
+<img src="images/attack_range_build.gif">
+</p>
+The project will build the AWS environment and allow us to being running our attacks on the instances. 
+</p>
+<p>
+<img src="images/attack_range_ec2.png">
+</p>
+<p>Once the environment is built, we can view the list of hosts to start executing our attack simulations.</p>
+<p><img src="images/attack_range_show.gif"></p>
+<h3 align="left">Attack Simulation</h3>
+<p>With the environment built, we'll initiate a simulated attack using the MITRE ATT&CK Tactic, T1589.001</p>
+<p><img src="images/attack_range_attack.gif"></p>
+<h3 align="left">Data Analysis</h3>
+<p>The simulated attack triggers detections from Central Intercept X Advanced, and populates the events in the Threat Analysis Center</p>
+<p><img src="images/attack_range_data.gif"></p>
