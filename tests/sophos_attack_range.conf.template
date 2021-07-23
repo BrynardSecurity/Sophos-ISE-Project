@@ -1,0 +1,12 @@
+[global]
+log_path = sophos_attack_range.log
+# sets log_path for the logging file
+
+log_level = INFO
+# sets the log level for the logging
+# possible values: INFO, ERROR
+
+sophos_attack_range_password = $0pH0$-@tt@ck-r@ng3
+# master password for all administrative accounts
+
+[]
