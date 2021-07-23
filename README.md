@@ -13,7 +13,7 @@
 * [getting started](#getting-started) :vertical_traffic_light:
 
 
-### Acknowledgements <img src="images/clap.gif" width="30px">
+### Acknowledgements :clap:
 
 This project was initiated by **Jeramy Kopacko**, with the help of **Christopher Glick** and **Ralph Brynard**. The stated goal of this collaboration is to build and develop tooling to eventually allow Sophos customers to test Sophos solutions head-to-head with competitor products. 
 
