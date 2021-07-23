@@ -70,3 +70,10 @@ The project will build the AWS environment and allow us to being running our att
 <h3 align="left">Data Analysis</h3>
 <p>The simulated attack triggers detections from Central Intercept X Advanced, and populates the events in the Threat Analysis Center</p>
 <p><img src="images/attack_range_data.gif"></p>
+
+## getting started :vertical_traffic_light:
+# Windows - AWS
+
+```
+powershell.exe -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/BrynardSecurity/Sophos-ISE-Project/main/sophos_range_cloud/scripts/windows_deploy_aws.ps1')"                   
+```
