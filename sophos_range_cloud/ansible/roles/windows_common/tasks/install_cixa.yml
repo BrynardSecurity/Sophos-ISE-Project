@@ -1,0 +1,23 @@
+---
+
+- name: Install CIXA
+  ansible.windows.win_powershell:
+    script: |
+      # Set Temp Variable using PowerShell
+      $TempFolder = "C:\TEMP"
+      New-Item -ItemType Directory -Force -Path $TempFolder
+      [Environment]::SetEnvironmentVariable("TEMP", $TempFolder, [EnvironmentVariableTarget]::Machine)
+      [Environment]::SetEnvironmentVariable("TMP", $TempFolder, [EnvironmentVariableTarget]::Machine)
+      [Environment]::SetEnvironmentVariable("TEMP", $TempFolder, [EnvironmentVariableTarget]::User)
+      [Environment]::SetEnvironmentVariable("TMP", $TempFolder, [EnvironmentVariableTarget]::User)
+
+      #Set TLS Version
+      [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls -bor [Net.SecurityProtocolType]::Tls11 -bor [Net.SecurityProtocolType]::Tls12
+
+      cd $env:TEMP
+
+      $url="https://dzr-api-amzn-us-west-2-fa88.api-upe.p.hmr.sophos.com/api/download/a24f232171f6e3dd9d913518503c1de4/SophosSetup.exe"
+      $installer = "SophosSetup.exe"
+      curl $url -OutFile $installer
+
+      Start-Process $env:TEMP\"SophosSetup.exe" -ArgumentList "--customertoken=9a02d9a7-02b9-446b-873a-ad752e668a6d --devicegroup=attack_range_hosts --epinstallerserver=dzr-api-amzn-us-west-2-fa88.api-upe.p.hmr.sophos.com --products=all --quiet" -Wait
