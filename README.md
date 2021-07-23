@@ -1,40 +1,31 @@
-<div class="header">
-    <h1 align="center">Sophos ISE Project</h1>
-    <p align="center">
-    <img src="https://img.shields.io/badge/made%20by-RalphBrynard-blue">
-</div>
-<!-- logo -->
-</br>
+# <center>Sophos ISE Project</center>
+<p align="center">
+    <img src="https://img.shields.io/badge/made for-sophos%20sales%20engineering-blue">
+</p>
 <p align="center">
     <a href="https://github.com/BrynardSecurity/Sophos-ISE-Project">
         <img src="images/logo.png" alt="logo" width="250" height="250">
     </a>
-    <h3 align="center">Sophos ISE Project</h3>
-    <p align="center">
-        Sophos Inside Sales Engineer demo project to jumpstart ISE and SE demo environments and scenario data.
-    </p>
-</p>
-<!-- table of contents -->
-<details open="open">
-    <summary>Table of Contents</summary>
-        <ol>
-            <li><a href="#about-the-project">About The Project</a>                
-            <li><a href="#proof-of-concept">Proof of concept</a> 
-            <li><a href="#Demo-AWS">Demo</a>
-        </ol>
-</details>
 
-<!-- about the project -->
-## About the Project
+## Table of contents :open_book:
+* [about the project](#about-the-project) :question:
+* [proof of concept](#proof-of-concept) :rocket:
+* [getting started](#getting-started) :vertical_traffic_light:
 
-This project was initiated by Jeramy Kopacko, with the help of Christopher Glick and Ralph Brynard, with the intent to create a <strong>Sophos Sales Experience</strong>, whereby Sophos customers can deploy an ephemeral development environment to actively test competing solutions with Sophos Central Intercept X Advanced. 
 
-The goal of the project is two-fold:
+### Acknowledgements <img src="images/clap.gif" width="30px">
 
-<ul>
-    <li> To utilize IaC and DevOps concepts and technologies to build ephemeral environments for generating threat case data to equip the Sales Engineering teams to effectively and efficiently demonstrate Sophos solutions with real-world automated simulations. 
-    <li> To perform head-to-head real-world tests with independent third-party attack emulation tools (Atomic Red Team, MITRE Caldera, etc...) to collect real-world competitive intelligence data. The secondary goal may also include providing a platform for customers to run head-to-head tests against Sophos and other third-party vendors to compare the performance of competitive solutions with Sophos solutions.
-</ul>
+This project was initiated by **Jeramy Kopacko**, with the help of **Christopher Glick** and **Ralph Brynard**. The stated goal of this collaboration is to build and develop tooling to eventually allow Sophos customers to test Sophos solutions head-to-head with competitor products. 
+
+Inspiration for the current iteration of the project came directly from a recommendation by **Ben Davis**, who shared the source-code for Splunk's [**attack range project**](https://github.com/splunk/attack_range).
+
+**Thank you to all who have contributed and who will continue to contribute!**
+
+## About the Project :question:
+
+However, the project has since evolved to also fill a role within the Sales Engineering team to generate consistent threat detection data to demonstrate Sophos solutions in pre-sales engagements. 
+
+
 
 ## Proof of Concept
 
