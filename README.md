@@ -75,5 +75,5 @@ The project will build the AWS environment and allow us to being running our att
 # Windows - AWS
 
 ```
-powershell.exe -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/BrynardSecurity/Sophos-ISE-Project/main/sophos_range_cloud/scripts/windows_deploy_aws.ps1')"                   
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/BrynardSecurity/Sophos-ISE-Project/main/sophos_range_cloud/scripts/windows_deploy_aws.ps1' -OutFile windows_deploy_aws.ps1 && .\windows_deploy_aws.ps1      
 ```
