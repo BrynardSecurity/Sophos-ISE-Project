@@ -11,9 +11,9 @@ Invoke-Expression((New-Object System.Net.WebClient).DownloadString('https://choc
 choco install "python;awscli;git;terraform"
 
 #clone the repository
-git clone https://github.com/BrynardSecurity/Sophos-ISE-Project 
+git clone https://github.com/BrynardSecurity/Sophos-ISE-Project C:\Sophos-ISE-Project
 
-Set-Location Sophos-ISE-Project\sophos_range_cloud\terraform\aws\local
+Set-Location C:\Sophos-ISE-Project\sophos_range_cloud\terraform\aws\local
 
 #init terraform modules
 terraform init 
