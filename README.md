@@ -77,3 +77,9 @@ The project will build the AWS environment and allow us to being running our att
 ```
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/BrynardSecurity/Sophos-ISE-Project/main/sophos_range_cloud/scripts/windows_deploy_aws.ps1' -OutFile windows_deploy_aws.ps1 && .\windows_deploy_aws.ps1      
 ```
+
+# Windows (local) - VirtualBox
+
+```
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/BrynardSecurity/Sophos-ISE-Project/sophos_range_local/deploy_attack_range.ps1' -OutFile deploy_attack_range.ps1 && .\deploy_attack_range.ps1      
+```
