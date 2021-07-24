@@ -7,17 +7,13 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 #Install chocolatey package manager
 Invoke-Expression((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-#Install the required packages
-choco install -y "python;awscli;git;terraform"
+#install required packages
+choco install -y "python;git;vagrant;ruby;virtualbox"
 
 #clone the repository
 git clone https://github.com/BrynardSecurity/Sophos-ISE-Project 
 
-Set-Location .\Sophos-ISE-Project\sophos_range_cloud\terraform\aws\local
-
-#init terraform modules
-terraform init 
-Set-Location ..\..\..
+Set-Location .\Sophos-ISE-Project\sophos_range_local
 
 #create python virtual environment
 python -m venv venv
@@ -25,6 +21,4 @@ venv\Scripts\activate
 
 #install requirements
 python -m pip install -r requirements.txt
-
-
-
+ansible-galaxy collection install community.windows
