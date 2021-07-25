@@ -1,0 +1,19 @@
+2021-07-25 10:54:51,965 - INFO - attack_range - INIT - attack_range v1
+2021-07-25 10:54:51,965 - ERROR - attack_range - ERROR: Use -a to perform an action or -lm to list available machines
+2021-07-25 10:55:54,639 - INFO - attack_range - INIT - attack_range v1
+2021-07-25 11:00:50,327 - INFO - attack_range - INIT - attack_range v1
+2021-07-25 11:00:50,370 - INFO - attack_range - [action] > build
+
+2021-07-25 11:00:53,198 - ERROR - attack_range - vagrant failed to build
+2021-07-25 11:02:11,619 - INFO - attack_range - INIT - attack_range v1
+2021-07-25 11:02:11,652 - INFO - attack_range - [action] > build
+
+2021-07-25 11:02:15,284 - ERROR - attack_range - vagrant failed to build
+2021-07-25 11:04:56,529 - INFO - attack_range - INIT - attack_range v1
+2021-07-25 11:04:56,557 - INFO - attack_range - [action] > build
+
+2021-07-25 11:05:01,538 - ERROR - attack_range - vagrant failed to build
+2021-07-25 13:51:03,442 - INFO - attack_range - INIT - attack_range v1
+2021-07-25 13:51:03,472 - INFO - attack_range - [action] > build
+
+2021-07-25 13:51:04,926 - ERROR - attack_range - vagrant failed to build
